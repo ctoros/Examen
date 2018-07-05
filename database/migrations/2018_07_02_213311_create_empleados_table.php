@@ -18,6 +18,7 @@ class CreateEmpleadosTable extends Migration {
             $table->string('nombre_empleado', 50);
             $table->string('password_empleado', 10);
             $table->char('categoria', 1);
+            $table->timestamps();
         });
     }
 

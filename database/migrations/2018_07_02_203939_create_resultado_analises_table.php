@@ -18,6 +18,7 @@ class CreateResultadoAnalisesTable extends Migration
             $table->date('fecha_registro');
             $table->integer('ppm');
             $table->boolean('estado');
+            $table->timestamps();
         });
     }
 

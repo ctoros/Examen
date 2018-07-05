@@ -15,7 +15,7 @@ class TodasLasFk extends Migration {
 
         Schema::table('telefonos', function (Blueprint $table) {
             $table->integer('particular_id')->unsigned();
-            $table->foreign('particular_id')->references('id')->on('particulars');
+            $table->foreign('particular_id')->references('id')->on('particulars')->onDelete('cascade');
         });
         
         
@@ -23,7 +23,7 @@ class TodasLasFk extends Migration {
         
         Schema::table('contactos', function (Blueprint $table) {
             $table->integer('empresa_id')->unsigned();
-            $table->foreign('empresa_id')->references('id')->on('empresas');
+            $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
         });
         
         

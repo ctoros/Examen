@@ -20,6 +20,7 @@ class CreateEmpresasTable extends Migration
             $table->string('nombre_empresa',30);
             $table->string('password_empresa',10);
             $table->string('direccion_empresa',50);
+            $table->timestamps();
         });
     }
 

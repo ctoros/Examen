@@ -16,6 +16,7 @@ class CreateTelefonosTable extends Migration
         Schema::create('telefonos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('numero_telefono',15);
+            $table->timestamps();
         });
     }
 

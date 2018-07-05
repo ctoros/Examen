@@ -15,11 +15,12 @@ class CreateParticularsTable extends Migration
     {
         Schema::create('particulars', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('rut_particular',45);
-            $table->string('password_particular',45);
-            $table->string('nombre_particular',45);
-            $table->string('direccion_particular',45);
-            $table->string('email_particular',100);
+            $table->string('rut',45);
+            $table->string('password',45);
+            $table->string('nombre',45);
+            $table->string('direccion',45);
+            $table->string('email',100);
+            $table->timestamps();
         });
     }
 

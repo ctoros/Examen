@@ -18,6 +18,7 @@ class CreateAnalisisMuestrasTable extends Migration
             $table->date('fecha_recepcion'); 
             $table->double('temperatura_muestra',3,1);
             $table->integer('cantidad_muestra');
+            $table->timestamps();
         });
     }
 
