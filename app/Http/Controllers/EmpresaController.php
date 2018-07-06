@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Particular;
-use App\Telefono;
-class ClienteController extends Controller
+use App\Http\Controllers\Controller;
+use App\Empresa;
+use App\Contacto;
+
+class EmpresaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +26,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('cliente.create');
+        //
     }
 
     /**
@@ -35,22 +37,23 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        $particular = new Particular();
-        $telefono = new Telefono();
-        $particular->rut= $request->input('rut');
-        $particular->nombre = $request->input('nombre');
-        $particular->password = $request->input('password');
-        $particular->email = $request->input('email');
-        $particular->direccion = $request->input('direccion');
-        $particular->save();
-        $telefono->numero_telefono = $request->input('telefono');
-        $telefono->particular_id = $particular->id;
+        $empresa = new Empresa();
+        $contacto = new Contacto();
+        
+        $empresa->rut_empresa= $request->input('rut');
+        $empresa->nombre_empresa = $request->input('nombre');
+        $empresa->password_empresa = $request->input('password');
+        $empresa->direccion_empresa = $request->input('direccion');
+        $empresa->save();
 
-        $telefono->save();
+        $contacto->rut = $request->input('rut_contacto');
+        $contacto->nombre = $request->input('nombre_contacto');
+        $contacto->email = $request->input('email_contacto');
+        $contacto->telefono = $request->input('telefono_contacto');
+        $contacto->empresa_id = $empresa->id;
+        $contacto->save();
 
-
-        //return response()->json($user.$detail,200);
-        return '<script>alert("Creado");window.location.href = "http://localhost:8000/"</script>';
+        return response()->json($empresa, 200);
     }
 
     /**
