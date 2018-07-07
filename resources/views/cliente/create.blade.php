@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('title','Registro Cliente')
-
 @section('content')
 	
 		<form class="form-group" method="POST" action="/cliente">
@@ -25,10 +23,7 @@
 				<center>
 					<label>Acepto las condiciones</label>
 					<input type="checkbox" name="condiciones" id="condiciones">
-
 				</center>
-
 			</div>
 		</form>
-
 @endsection

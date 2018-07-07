@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TipoAnalisisController extends Controller
+class AnalisisMuestraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class TipoAnalisisController extends Controller
      */
     public function create()
     {
-        //
+        return view('isp.empleado.receptor.registro_muestra');
     }
 
     /**

@@ -9,12 +9,39 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
-                    You are logged in!
+                    <h2></h2>
+
+
+                    <div class="card-body">
+
+                        <h4>Bienvenido . {{ auth()->user()->email }} </h4>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">codigo</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Borrar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                         
+                            <tr>
+                                <th scope="row">{{ auth()->user()->id }}</th>
+                                <td><a href="/index/{{ auth()->user()->id }}/edit"> editar Perfil</a></td>
+                                <td><a href="/delete/{{ auth()->user()->id }}">Dar de Bajar</a></td>
+                            </tr>
+                       
+                        </tbody>
+                    </table>
+
+
+
                 </div>
             </div>
         </div>

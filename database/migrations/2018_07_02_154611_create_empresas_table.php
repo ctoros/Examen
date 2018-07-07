@@ -15,7 +15,6 @@ class CreateEmpresasTable extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('codigo_empresa')->unique();
             $table->string('rut_empresa',10);
             $table->string('nombre_empresa',30);
             $table->string('password_empresa',10);

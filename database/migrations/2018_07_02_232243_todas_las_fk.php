@@ -24,6 +24,8 @@ class TodasLasFk extends Migration {
         Schema::table('contactos', function (Blueprint $table) {
             $table->integer('empresa_id')->unsigned();
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
+             $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
         });
         
         
@@ -52,6 +54,11 @@ class TodasLasFk extends Migration {
             $table->integer('analisis_muestras_id')->unsigned();
             $table->foreign('analisis_muestras_id')->references('id')->on('resultado_analises');
         });
+             Schema::table('particulars', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+        });
+        
     }
 
     /**
